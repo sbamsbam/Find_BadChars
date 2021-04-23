@@ -3,7 +3,7 @@
 This is a simple application that will automate the process of finding bad characters for a simple Windows based buffer overflow.
 
 # Download
-Latest Release: https://github.com/versex799/OSCP_BadChars/releases/tag/V1
+Latest Release: https://github.com/versex799/Find_BadChars/releases/tag/V1
 
 # Process
 
