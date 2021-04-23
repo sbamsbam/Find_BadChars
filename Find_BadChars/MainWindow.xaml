@@ -1,0 +1,54 @@
+﻿<Window x:Class="Find_BadChars.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Find_BadChars"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="522.768">
+    <DockPanel>
+        <DockPanel.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF282429" Offset="0"/>
+                <GradientStop Color="Black" Offset="1"/>
+            </LinearGradientBrush>
+        </DockPanel.Background>
+
+        <Grid DockPanel.Dock="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="3" VerticalAlignment="Top" Margin="10" Visibility="Visible">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="100" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="File: " FontWeight="Bold" HorizontalAlignment="Right" Margin="10" Foreground="#FFD1D1D1" />
+                <TextBox Text="{Binding SelectedFile}" HorizontalAlignment="Stretch" Grid.Column="1" VerticalAlignment="Center" Margin="10" />
+                <Button x:Name="browseButton" Content="Browse" FontWeight="Bold" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10" Grid.Column="2" Click="browseButton_Click" />
+            </Grid>
+            <TextBlock Text="Bad Chars Finder" Margin="10" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FFD1D1D1" />
+            <TextBlock Text="Paste the debugger output into a text file, browse and select that file, and the bad characters will be displayed in the box" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center" Grid.Row="1" Margin="10,10,0,0" FontSize="14" Foreground="#FFD1D1D1"  />
+            <TextBlock x:Name="errorText" Text="{Binding Error, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Visibility="Hidden" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Bottom" Grid.Row="2" Margin="10,10,0,0" FontSize="14" FontWeight="Bold" Foreground="#FF990000"  />
+            <!--<TextBox x:Name="debugOutputBox" AcceptsReturn="True" TextWrapping="Wrap" Text="{Binding DebugOutput, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" HorizontalAlignment="Stretch" Margin="20" Background="{x:Null}" Foreground="#FFD1D1D1" CaretBrush="#FFD1D1D1" GotFocus="TextBox_GotFocus" LostFocus="debugOutputBox_LostFocus" />
+         -->
+            <RichTextBox x:Name="debugOutputRichBox" Grid.Row="3" HorizontalAlignment="Stretch" Visibility="Collapsed" Margin="20" Background="{x:Null}" Foreground="#FFD1D1D1" CaretBrush="#FFD1D1D1" />
+            <Button x:Name="getBadCharsButton" Click="getBadCharsButton_Click" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Get Bad Chars" Height="30" Width="100" FontWeight="Bold" >
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF00CB1C" Offset="0"/>
+                        <GradientStop Color="#FF002305" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <TextBox Grid.Row="5" Text="{Binding BadChars}" HorizontalAlignment="Stretch" Margin="20" Background="{x:Null}" Foreground="#FFD1D1D1" CaretBrush="#FFD1D1D1" IsReadOnly="True" />
+        </Grid>
+
+    </DockPanel>
+</Window>
