@@ -12,20 +12,20 @@ To do this, simply right click on ESP in the top right quadrant of the debugger 
 output in the lower left quadrant. Highligt all the characters in the dump from 01 to FF. Right click it and select Copy To Clipboard.
 
 
-![Follow In Dump](https://github.com/versex799/OSCP_BadChars/blob/master/follow.png)
+![Follow In Dump](https://github.com/versex799/Find_BadChars/blob/master/follow.png)
 
 
-![Immunity Dump](https://github.com/versex799/OSCP_BadChars/blob/master/dump.png)
+![Immunity Dump](https://github.com/versex799/Find_BadChars/blob/master/dump.png)
 
 
 You can then paste this output into a text file and save it to the computer running the Find BadChars application. 
 
 
-![Dump Text File](https://github.com/versex799/OSCP_BadChars/blob/master/bc.png)
+![Dump Text File](https://github.com/versex799/Find_BadChars/blob/master/bc.png)
 
 
 In the application select the text file you just created and hit the "Get Bad Chars" button. The bottom box will display all the bad characters found in
 the output.
 
 
-![Application Output](https://github.com/versex799/OSCP_BadChars/blob/master/badChars.png)
+![Application Output](https://github.com/versex799/Find_BadChars/blob/master/badChars.png)
